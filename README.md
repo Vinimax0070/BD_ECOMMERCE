@@ -29,4 +29,6 @@ A estrutura do banco de dados está organizada de forma relacional. Abaixo estã
 - **Account** 1:1 **Client**: Cada cliente tem uma conta associada que pode conter um CPF ou CNPJ.
 - **Card** 1:N **Client**: Um cliente pode ter múltiplos cartões de pagamento associados.
 
+![Modelo do Banco de Dados](img/bd_e-commerce.png)
+
 Bootcamp Suzano
