@@ -1,19 +1,15 @@
-Adicionando a coluna is_active (TINYINT ou BOOLEAN) às tabelas Client, Product e Marketplace_Seller para ativação/desativação lógica.
+--Adicionando a coluna is_active (TINYINT ou BOOLEAN) às tabelas Client, Product e Marketplace_Seller para ativação/desativação lógica.
 
-sql
-Copiar código
+
 ALTER TABLE Client ADD is_active TINYINT(1) DEFAULT 1;
 ALTER TABLE Product ADD is_active TINYINT(1) DEFAULT 1;
 ALTER TABLE Marketplace_Seller ADD is_active TINYINT(1) DEFAULT 1;
 
 
-Considere usar CHECK constraints para garantir que:
+--Usar CHECK constraints para garantir que:
 price > 0 na tabela Product.
 quantity >= 0 em tabelas relacionadas a estoques e pedidos.
-Exemplo:
 
-sql
-Copiar código
 ALTER TABLE Product ADD CONSTRAINT chk_price CHECK (price > 0);
 ALTER TABLE Product_has_Stock ADD CONSTRAINT chk_quantity CHECK (quantity >= 0);
 
