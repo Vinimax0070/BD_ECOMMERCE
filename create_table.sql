@@ -120,7 +120,7 @@ CREATE TABLE `Order` (
     quantity INT NOT NULL,
     order_date DATE NOT NULL,
     status VARCHAR(45),
-    total_amount FLOAT,
+    total_amount DECIMAL(10,2),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     idClient INT NOT NULL,
