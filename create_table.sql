@@ -30,7 +30,7 @@ CREATE TABLE Client (
 CREATE TABLE Account (
     idAccount INT AUTO_INCREMENT PRIMARY KEY,
     account_type CHAR(4) NOT NULL COMMENT 'CPF or CNPJ',
-    adress VARCHAR(200),
+    address VARCHAR(200),
     phone_number VARCHAR(15),
     f_name VARCHAR(45),
     l_name VARCHAR(45),
@@ -56,7 +56,7 @@ CREATE TABLE Card (
 CREATE TABLE Product (
     idProduct INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    price FLOAT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
     sku VARCHAR(45) UNIQUE,
     description VARCHAR(200),
     category VARCHAR(45),
@@ -89,7 +89,7 @@ CREATE TABLE Supplier (
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100),
     phone_number VARCHAR(15),
-    adress VARCHAR(200),
+    address VARCHAR(200),
     city VARCHAR(100),
     state VARCHAR(45),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -131,7 +131,7 @@ CREATE TABLE `Order` (
 CREATE TABLE Delivery (
     idDelivery INT AUTO_INCREMENT PRIMARY KEY,
     status VARCHAR(45) NOT NULL,
-    adress_delivery VARCHAR(200) NOT NULL,
+    address_delivery VARCHAR(200) NOT NULL,
     tracking VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
