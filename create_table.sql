@@ -136,7 +136,7 @@ CREATE TABLE Delivery (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     idOrder INT NOT NULL,
-    FOREIGN KEY (idOrder) REFERENCES `Order`(idOrder) ON DELETE CASCADE
+    FOREIGN KEY (idOrder) REFERENCES order_ecommerce (idOrder) ON DELETE CASCADE
 );
 
 -- Table: Tracking_Order
@@ -145,7 +145,7 @@ CREATE TABLE Tracking_Order (
     idOrder INT NOT NULL,
     PRIMARY KEY (delivery_idDelivery, idOrder),
     FOREIGN KEY (delivery_idDelivery) REFERENCES Delivery(idDelivery) ON DELETE CASCADE,
-    FOREIGN KEY (idOrder) REFERENCES `Order`(idOrder) ON DELETE CASCADE
+    FOREIGN KEY (idOrder) REFERENCES order_ecommerce(idOrder) ON DELETE CASCADE
 );
 
 -- Table: Relation_product_order
@@ -153,6 +153,6 @@ CREATE TABLE Relation_product_order (
     Order_idOrder INT NOT NULL,
     Product_idProduct INT NOT NULL,
     PRIMARY KEY (Order_idOrder, Product_idProduct),
-    FOREIGN KEY (Order_idOrder) REFERENCES `Order`(idOrder) ON DELETE CASCADE,
+    FOREIGN KEY (Order_idOrder) REFERENCES order_ecommerce(idOrder) ON DELETE CASCADE,
     FOREIGN KEY (Product_idProduct) REFERENCES Product(idProduct) ON DELETE CASCADE
 );
