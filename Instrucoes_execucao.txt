@@ -1,0 +1,37 @@
+## Instruções de Execução
+
+Para executar este banco de dados, siga as etapas abaixo:
+
+1. Crie o banco de dados:
+   ```sql
+   CREATE DATABASE ecommerce_db;
+   ```
+
+2. Selecione o banco de dados:
+   ```sql
+   USE ecommerce_db;
+   ```
+
+3. Execute o script para criar as tabelas:
+   ```sql
+   --volte e entre no arquivo create_table.sql, la ira tem o passo a passo para criar todas as tabelas
+   ```
+
+4. Insira dados de teste (caso tenha algum script para isso):
+   ```sql
+   --Entre no arquivo Procedures, la tem o codigo para criação de 500 registros, caso deseje mais basta mudar o numero
+   ```
+
+5. Realize consultas para testar o banco de dados:
+   ```sql
+   SELECT * FROM Product;
+   SELECT * FROM Client;
+   ```
+
+6. Para rodar as queries de análise exploratória, use o script `analise_exploratoria.sql`:
+   ```sql
+   -- Exemplo de consulta de análise exploratória
+   SELECT COUNT(*) FROM Order;
+   ```
+
+**Dica**: Use o script `analise_exploratoria.sql` para obter insights sobre o banco de dados com as perguntas de negócios.
