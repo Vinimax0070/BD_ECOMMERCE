@@ -24,8 +24,8 @@ O mercado de **E-commerce** é extremamente competitivo e baseado em decisões o
 ### **2. Qual é o produto mais vendido e qual o menos vendido?**
    - **Importância**: Identifica os produtos de maior sucesso e aqueles com baixo desempenho, ajudando a otimizar estoques e campanhas de marketing.
 
-### **3. Qual é o valor total de vendas até o momento?**
-   - **Importância**: Mede o desempenho geral das vendas e fornece um indicador chave para o sucesso do negócio.
+### **3. Qual o total financeiro de vendas por mês, ano, status e SKU do produto?**
+   - **Importância**: A consulta fornece uma análise detalhada do desempenho financeiro das vendas, agrupando os dados por mês, ano, status do pedido e SKU dos produtos.
 
 ### **4. Qual cliente realizou o maior número de pedidos?**
    - **Importância**: Identifica clientes de alto valor (VIPs) para ações de fidelização e atendimento personalizado.
