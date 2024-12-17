@@ -222,3 +222,32 @@ DELIMITER ;
 
 CALL insert_supplier_data();
 
+--inserindo dados na tabela Providing_a_Product
+DELIMITER $$
+
+CREATE PROCEDURE insert_random_product_supplier()
+BEGIN
+    DECLARE counter INT DEFAULT 1;
+    DECLARE random_product INT;
+    DECLARE random_supplier INT;
+
+    -- Loop para inserir 500 registros aleatórios
+    WHILE counter <= 500 DO
+        -- Gerando IDs aleatórios de Produto e Fornecedor
+        -- Seleciona aleatoriamente um ID de produto da tabela Product
+        SELECT idProduct INTO random_product FROM Product ORDER BY RAND() LIMIT 1;
+        
+        -- Seleciona aleatoriamente um ID de fornecedor da tabela Supplier
+        SELECT idSupplier INTO random_supplier FROM Supplier ORDER BY RAND() LIMIT 1;
+
+        -- Inserindo na tabela Providing_a_Product
+        INSERT INTO Providing_a_Product (Product_idProduct, Supplier_idSupplier)
+        VALUES (random_product, random_supplier);
+
+        SET counter = counter + 1;
+    END WHILE;
+END$$
+
+DELIMITER ;
+
+CALL insert_random_product_supplier();
