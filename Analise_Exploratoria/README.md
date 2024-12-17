@@ -27,7 +27,7 @@ O mercado de **E-commerce** é extremamente competitivo e baseado em decisões o
 ### **3. Qual o total financeiro de vendas por mês, ano, status e SKU do produto?**
    - **Importância**: A consulta fornece uma análise detalhada do desempenho financeiro das vendas, agrupando os dados por mês, ano, status do pedido e SKU dos produtos.
 
-### **4. Qual cliente realizou o maior número de pedidos?**
+### **4. Quantidade de pedidos por cliente, quero saber o mes e ano também desses pedidos?**
    - **Importância**: Identifica clientes de alto valor (VIPs) para ações de fidelização e atendimento personalizado.
 
 ### **5. Quantos pedidos foram realizados em cada mês?**
