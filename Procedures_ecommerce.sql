@@ -130,3 +130,32 @@ JOIN
     (SELECT idProduct FROM Product ORDER BY RAND() LIMIT 1000) p
 ORDER BY RAND()
 LIMIT 1000;
+
+--Inserindo dados na tabela delivery
+DELIMITER $$
+
+CREATE PROCEDURE insert_deliveries()
+BEGIN
+    DECLARE counter INT DEFAULT 1;
+
+    WHILE counter <= 500 DO
+        INSERT INTO Delivery (status, address_delivery, tracking, idOrder)
+        VALUES 
+        (
+            CASE 
+                WHEN counter % 2 = 0 THEN 'In Transit'
+                ELSE 'Delivered'
+            END,
+            CONCAT('Street ', counter, ', neighborhood
+ ABC, City XYZ'),
+            CONCAT('TRK', LPAD(counter, 6, '0')), -- Tracking code: TRK000001, TRK000002, etc.
+            FLOOR(1 + (RAND() * 500))  -- Random idOrder between 1 and 100
+        );
+
+        SET counter = counter + 1;
+    END WHILE;
+END$$
+
+DELIMITER ;
+
+CALL insert_deliveries();
