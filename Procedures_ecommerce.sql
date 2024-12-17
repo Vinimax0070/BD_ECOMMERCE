@@ -119,12 +119,14 @@ DELIMITER ;
 CALL InsertMarketplaceSellers(500);
 
 --Inserindo dados na tabela Relation_product_order
+-- Gerar 1000 registros aleatórios de Order_idOrder e Product_idProduct
 INSERT INTO Relation_product_order (Order_idOrder, Product_idProduct)
 SELECT 
     o.idOrder, 
     p.idProduct
 FROM 
-    (SELECT idOrder FROM order_ecommerce ORDER BY RAND() LIMIT 100) o
-CROSS JOIN 
-    (SELECT idProduct FROM Product ORDER BY RAND() LIMIT 100) p
-LIMIT 500;
+    (SELECT idOrder FROM order_ecommerce ORDER BY RAND() LIMIT 1000) o
+JOIN 
+    (SELECT idProduct FROM Product ORDER BY RAND() LIMIT 1000) p
+ORDER BY RAND()
+LIMIT 1000;
