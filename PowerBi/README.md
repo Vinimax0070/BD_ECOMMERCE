@@ -25,15 +25,6 @@ Veja as imagens das respostas para as **15 perguntas de negócios** listadas aba
 - **Pergunta 14:** [Gráfico de Margem de Lucro por Produto](./pergunta14.png)
 - **Pergunta 15:** [Gráfico de Clientes com Maior Número de Compras](./pergunta15.png)
 
----
-
-### 2. **Relatórios Interativos**
-
-- Para uma **exploração interativa** dos dados, abra os seguintes relatórios no **Power BI Desktop**:
-    - [Relatório Interativo 1 - Análises de Vendas e Produtos](./relatorio_interativo.pbix)
-    - [Relatório Interativo 2 - Análise de Pedidos e Clientes](./outro_relatorio.pbix)
-
-Esses relatórios permitem uma exploração mais detalhada e dinâmica dos dados, com a capacidade de filtrar, segmentar e interagir com as informações.
 
 ---
 
