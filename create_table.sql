@@ -115,7 +115,7 @@ CREATE TABLE Marketplace_Seller (
 );
 
 -- Table: Order
-CREATE TABLE `Order` (
+CREATE TABLE order_ecommerce (
     idOrder INT AUTO_INCREMENT PRIMARY KEY,
     quantity INT NOT NULL,
     order_date DATE NOT NULL,
