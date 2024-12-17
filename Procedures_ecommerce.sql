@@ -159,3 +159,38 @@ END$$
 DELIMITER ;
 
 CALL insert_deliveries();
+
+
+--inserindo dados na tabela Product_has_Stock
+DELIMITER $$
+
+CREATE PROCEDURE insert_product_stock()
+BEGIN
+    DECLARE counter INT DEFAULT 1;
+    DECLARE product_count INT;
+    DECLARE stock_count INT;
+
+    -- Obter o número total de produtos e estoques
+    SELECT COUNT(*) INTO product_count FROM Product;
+    SELECT COUNT(*) INTO stock_count FROM Stock;
+
+    WHILE counter <= 500 DO
+        -- Inserir um registro com IDs válidos para Product_idProduct e Stock_idStock
+        INSERT INTO Product_has_Stock (Product_idProduct, Stock_idStock, quantity)
+        SELECT 
+            p.idProduct, -- Seleciona um ID válido de produto
+            s.idStock,   -- Seleciona um ID válido de estoque
+            FLOOR(1 + (RAND() * 100)) -- Quantidade aleatória entre 1 e 100
+        FROM Product p
+        JOIN Stock s
+        ORDER BY RAND() -- Aleatoriamente seleciona um produto e um estoque
+        LIMIT 1; -- Garante que apenas um par de IDs será inserido
+
+        SET counter = counter + 1;
+    END WHILE;
+END$$
+
+DELIMITER ;
+
+CALL insert_product_stock();
+
