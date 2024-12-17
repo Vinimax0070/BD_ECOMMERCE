@@ -60,8 +60,8 @@ O mercado de **E-commerce** é extremamente competitivo e baseado em decisões o
 ### **14. Qual é a média de tempo entre o pedido e a entrega?**
    - **Importância**: Mensura a eficiência do processo de entrega e identifica áreas de melhoria.
 
-### **15. Quais os produtos mais fornecidos por vendedores de marketplace?**
-   - **Importância**: Ajuda a identificar tendências no marketplace e a analisar a competitividade dos produtos.
+### **15. Qual é o volume total de vendas por cliente?**
+   - **Importância**: Ajuda a identificar clientes valiosos para a empresa.
 
 ---
 
