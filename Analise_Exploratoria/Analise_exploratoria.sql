@@ -39,6 +39,7 @@ ORDER BY
     quantity_sells ASC
 LIMIT 5;
 
+
 3.Qual é o valor total de vendas agrupados por mes,ano e total até o momento?
 SELECT 
     EXTRACT(MONTH FROM OE.ORDER_DATE) AS MONTH,
@@ -65,6 +66,7 @@ ORDER BY
     YEAR, MONTH, OE.STATUS, OE.QUANTITY
 LIMIT 0, 1000;
 
+
 4.Quantidade de pedidos por cliente, quero saber o mes e ano também desses pedidos?
 SELECT 
     C.f_name AS CLIENT_NAME,  -- Nome do cliente
@@ -85,6 +87,7 @@ GROUP BY
 ORDER BY 
     YEAR DESC, MONTH DESC, total_pedidos DESC;  -- Ordenando por ano, mês e quantidade de pedidos
 
+
 5.Quantos pedidos foram realizados em cada mês?
 SELECT 
 	EXTRACT(MONTH FROM ORDER_DATE) AS MONTH,
@@ -96,12 +99,14 @@ GROUP BY
 ORDER BY 
 	TOTAL_ORDER
 
+	
 6.Qual é a média de quantidade de produtos por pedido?
 
 SELECT 
     ROUND(AVG(OE.QUANTITY), 2) AS QUANTITY_MEDIA  -- Média geral da quantidade de produtos por pedido
 FROM 
     ORDER_ECOMMERCE OE;
+
 
 7. Quais produtos estão com o estoque abaixo de um limite crítico (ex: menos de 10 unidades)?
 --Analisar a situação do estoque por completo
@@ -138,6 +143,7 @@ GROUP BY
 ORDER BY 
 	QUANTITY ASC;
 
+
 8.Qual é a receita gerada por cada categoria de produto?
 --Aqui demonstro a receita com base em categoria e cada produto individualmente
 SELECT 
@@ -171,6 +177,7 @@ ORDER BY
     CATEGORY;
 
 
+
 9. Qual foi o pedido de maior valor já realizado?
 SELECT
 	OE.idOrder,
@@ -185,6 +192,8 @@ INNER JOIN
 ORDER BY
 	OE.TOTAL_AMOUNT DESC
 
+
+	
 10.Qual fornecedor fornece o maior número de produtos?
 SELECT 
     s.name AS supplier_name,
@@ -200,6 +209,7 @@ ORDER BY
 LIMIT 1;
 
 
+
 11.Quantos clientes ainda estão ativos (coluna is_active)?
 SELECT 
 	COUNT(*) AS ACT_DES_CLIENT,
@@ -212,6 +222,8 @@ FROM
 GROUP BY 
 	IS_ACTIVE;
 
+
+
 12.Qual cidade tem a maior concentração de clientes?
 SELECT 
 	COUNT(*) AS TOTAL_CLIENT,
@@ -222,6 +234,8 @@ group by
 	CITY
 ORDER BY
 	TOTAL_CLIENT DESC;
+
+
 
 13.Quais são os status mais comuns dos pedidos (ex: "Entregue", "Pendente")?
 -- CASO ISSO FOSSE PARA UM APRENDIZADO DE MAQUINA TERIAMOS QUE SUBSTITUIR 
