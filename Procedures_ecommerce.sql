@@ -194,3 +194,31 @@ DELIMITER ;
 
 CALL insert_product_stock();
 
+
+--Inserindo dados na tabela supplier
+DELIMITER $$
+
+CREATE PROCEDURE insert_supplier_data()
+BEGIN
+    DECLARE counter INT DEFAULT 1;
+
+    WHILE counter <= 500 DO
+        INSERT INTO Supplier (name, email, phone_number, address, city, state)
+        VALUES
+            (
+                CONCAT('Supplier ', counter),               -- Nome: Supplier 1, Supplier 2, ..., Supplier 500
+                CONCAT('supplier', counter, '@example.com'), -- Email: supplier1@example.com, supplier2@example.com, ...
+                CONCAT('555-000', LPAD(counter, 3, '0')),    -- Telefone: 555-000001, 555-000002, ...
+                CONCAT('Street ', counter, ', City XYZ'),    -- Endereço: Street 1, Street 2, ...
+                CONCAT('City ', (counter MOD 5) + 1),        -- Cidade (circular, de 1 a 5): City 1, City 2, ...
+                CONCAT('State ', (counter MOD 3) + 1)        -- Estado (circular, de 1 a 3): State 1, State 2, ...
+            );
+
+        SET counter = counter + 1;
+    END WHILE;
+END$$
+
+DELIMITER ;
+
+CALL insert_supplier_data();
+
