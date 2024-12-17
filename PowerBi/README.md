@@ -64,7 +64,3 @@ Se você tiver alguma dúvida sobre este projeto ou precisar de ajuda com o banc
 
 ---
 
-## 📂 Estrutura do Projeto
-
-Aqui está a estrutura da pasta **PowerBi**:
-
